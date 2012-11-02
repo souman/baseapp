@@ -1,0 +1,17 @@
+development:
+  adapter: mysql2
+  database: sifterpt_development
+  pool: 5
+  username: root
+  password:
+  host: localhost
+  reconnect: true
+
+test:
+  adapter: mysql2
+  database: sifterpt_test
+  pool: 5
+  username: root
+  password:
+  host: localhost
+  reconnect: true

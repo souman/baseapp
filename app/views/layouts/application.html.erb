@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+
+    <title>Monitor</title>
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]-->
+
+    <%= stylesheet_link_tag "application" %>
+    <%= javascript_include_tag "application" %>
+
+    <%= csrf_meta_tag %>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <%= yield :head %>
+
+  </head>
+
+  <body>
+
+    <%= render "layouts/application/header" %>
+
+    <div class="container">
+
+      <%= render "layouts/application/flash_messages" %>
+
+      <div class="row">
+        <div id="side_column" class="span3">
+          <%= yield :sidebar %>
+        </div>
+        <div id="main_column" class="span8 well">
+          <%= yield %>
+        </div>
+      </div>
+
+    </div>
+
+  </body>
+
+</html>
