@@ -1,0 +1,10 @@
+<div class='clearfix'>
+  <div class='pull-left'>
+    <h1>Topics</h1>
+  </div>
+  <div class='pull-right'>
+    <%= link_to 'New Topic', new_topic_path, :class => "btn btn-primary"%>
+  </div>
+</div>
+<hr/>
+<%= render :partial => "topic", :collection => @topics %>

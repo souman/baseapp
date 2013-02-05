@@ -1,0 +1,14 @@
+<h3><%= link_to post.title, post_path(:id => post.id) %></h3>
+<div><p><%= post.content %></p></div>
+<div class='clearfix'>
+  <div class='pull-left'>
+    <span class='strong'><%= "Author: " %></span><%= post.user.email %>
+    <% if post.topic.present? %>
+     <div><span class='strong'><%= "Topic: " %></span> <%= post.topic.name %></div>
+    <% end %>
+  </div>
+  <div class='pull-right'>
+    <%= post.comments.count %><%= " comments" %>
+  </div>
+</div>
+<hr/>

@@ -1,0 +1,28 @@
+<div class='clearfix'>
+  <div class='pull-left'>
+    <h2><%= @post.title %></h2>
+  </div>
+  <div class='pull-right'>
+    <% if @post.can_destroy?(current_user) %>
+      <%= link_to 'Delete', post_path(:id => @post.id), :method => :Delete %>
+    <% end %>
+  </div>
+</div>
+<hr class='no-margin-top'>
+<div class='clearfix'>
+  <div><p><%= @post.content %></p></div>
+  <div class='clearfix'>
+    <div class='pull-left'>
+      <span class='strong'><%= "Author: " %></span><%= @post.user.email %>
+      <% if @post.topic.present? %>
+        <div class='bottom10'><span class='strong'><%= "Topic: "%></span><%= @post.topic.name %></div>
+      <% end %>
+    </div>
+    <div class='pull-right'>
+      <%= @post.comments.count %><%= " comments" %>
+    </div>
+  </div>
+  <hr/>
+</div>
+<%= render :partial => "comments/comment", :collection => @comments %>
+<%= render :partial => 'comments/new', :locals => {:post => @post} %>

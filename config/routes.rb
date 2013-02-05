@@ -5,13 +5,14 @@ BaseApp::Application.routes.draw do
   match "/admin" => "admin/base#index", :as => "admin"
 
   resources :pages
+  resources :topics
+  resources :posts
+  resources :comments
+
   namespace "admin" do
-
     resources :users
-
   end
 
   root :to => "pages#index"
-  match "*rest" => "pages#index"
 
 end

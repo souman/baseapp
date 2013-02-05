@@ -1,0 +1,17 @@
+<ul class="nav nav-tabs nav-stacked">
+  <li><%= link_to "Posts", posts_path %></li>
+  <li><%= link_to "Topics", topics_path %></li>
+</ul>
+
+<div class='clearfix'>
+  <div class='strong'>Most active user</div>
+  <% user = User.popular_user %>
+  <%= user.email if user.present? %>
+  <br/><br/>
+  <div class='strong'>Most popular topic</div>
+    <% topic = Topic.popular_topic %>
+    <%= link_to topic.name, posts_path(:topic_id => topic.id) if topic.present? %><br/><br/>
+  <div class='strong'>Most popular post</div>
+  <% post = Post.popular_post %>
+  <%= link_to post.title, post_path(post.id)  if post.present? %>
+</div>

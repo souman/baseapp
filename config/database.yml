@@ -1,6 +1,6 @@
 development:
   adapter: mysql2
-  database: sifterpt_development
+  database: blog_dev
   pool: 5
   username: root
   password:
@@ -9,7 +9,7 @@ development:
 
 test:
   adapter: mysql2
-  database: sifterpt_test
+  database: blog_test
   pool: 5
   username: root
   password:

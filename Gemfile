@@ -18,8 +18,8 @@ gem "stalker"
 
 group :development do
   gem "chronic"
-  gem "admin_view"
-  gem "ruby-debug19"
+  gem "admin_view"  
+  gem 'debugger'
 end
 
 group :production, :development do

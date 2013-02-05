@@ -1,0 +1,10 @@
+<div class='clearfix'>
+<div class='pull-left'>
+    <%= link_to topic.name, posts_path(:topic_id => topic.id) %><br/>
+    <%= topic.user.email %>
+  </div>
+  <% if topic.can_destroy?(current_user) %>
+    <div class='pull-right'><%= link_to 'Delete', topic_path(:id => topic.id), :method => :Delete %></div>
+  <% end %>
+</div>
+<hr/>

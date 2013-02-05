@@ -1,0 +1,13 @@
+<div class='clearfix'>
+  <div class='pull-left'>
+    <p><%= comment.content %></p>
+    <%= "  - " %><%= comment.user.email %>
+  </div>
+  <div class='pull-right'>
+    <% if comment.can_destroy?(current_user) %>
+      <%= link_to 'Delete', comment_path(:id => comment.id), :method => :Delete %>
+    <% end %>
+  </div>
+</div>
+
+  <hr/>
